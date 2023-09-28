@@ -101,7 +101,6 @@
   import HelloWorld from './components/HelloWorld.vue';
   import SectionModal from './components/SectionModal.vue';
 import DragAndDrop from './components/DragAndDrop.vue';
-import ContentModal from './components/ContentModal.vue';
   import { themeColourNames } from './helpers/enums';
 
   import { ref, watch } from 'vue';
