@@ -1,0 +1,65 @@
+// Center Mixin
+// use: @include center; @include center(true, false); @include center(false, true)
+//
+// Set $invert to true to invert the usual directions used (top & left) which is necessary for
+// position-based transitions, as the same property needs to change for a smooth experience (e.g. a
+// transition from top: 50% to bottom: 0 won't work properly - but bottom: 50% to bottom: 0 will).
+@mixin center($horizontal: true, $vertical: true, $invert: false) {
+  position: absolute;
+
+  $vertical-direction: if($invert, 'bottom', 'top');
+  $horizontal-direction: if($invert, 'right', 'left');
+  $transform-offset: if($invert, 50%, -50%);
+
+  @if ($horizontal and $vertical) {
+    #{$vertical-direction}: 50%;
+    #{$horizontal-direction}: 50%;
+    -webkit-transform: translate($transform-offset, $transform-offset);
+    transform: translate($transform-offset, $transform-offset);
+  } @else if ($horizontal) {
+    #{$horizontal-direction}: 50%;
+    -webkit-transform: translate($transform-offset, 0);
+    transform: translate($transform-offset, 0);
+  } @else if ($vertical) {
+    #{$vertical-direction}: 50%;
+    -webkit-transform: translate(0, $transform-offset);
+    transform: translate(0, $transform-offset);
+  }
+}
+
+@mixin flex-position($display: flex, $flow: row, $justify: null, $align: null, $gap: null) {
+  display: $display;
+  flex-flow: $flow;
+  @if $justify {
+    justify-content: $justify;
+  }
+  @if $align {
+    align-items: $align;
+  }
+  @if $gap {
+    gap: $gap;
+  }
+}
+
+@mixin wdis-theme($colour: null, $background: null, $border: null) {
+  @if $colour {
+    color: map-get($map: $wdis-colours, $key: $colour);
+  }
+
+  @if $background {
+    background-color: map-get($map: $wdis-colours, $key: $background);
+  }
+
+  @if $border {
+    border-color: map-get($map: $wdis-colours, $key: $border);
+  }
+}
+
+@mixin button-style() {
+  display: flex;
+  flex-flow: row wrap;
+  color: map-get($map: $wdis-colours, $key: 'grey-50');
+  padding: map-get($map: $wdis-spacers, $key: 1) map-get($map: $wdis-spacers, $key: 2);
+  cursor: pointer;
+  border-radius: map-get($map: $wdis-border-radius, $key: 5);
+}

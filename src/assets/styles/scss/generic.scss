@@ -1,0 +1,613 @@
+* {
+  font-family: 'poppins';
+  box-sizing: border-box;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+body {
+  margin: 0;
+  background-color: map-get($map: $wdis-colours, $key: 'grey-900');
+  color: map-get($map: $wdis-colours, $key: 'grey-50');
+  font-size: 20;
+}
+
+.wdis {
+  // Display Stylings
+  &-inline-block {
+    display: inline-block !important;
+  }
+
+  &-block {
+    display: block !important;
+  }
+
+  &-hidden {
+    display: none !important;
+  }
+
+  &-inline-flex {
+    display: inline-flex !important;
+  }
+
+  // overflow
+  &-o {
+    @each $overflow in $wdis-overflows {
+      &-#{$overflow} {
+        overflow: $overflow;
+
+        &-y {
+          overflow-y: $overflow;
+        }
+
+        &-x {
+          overflow-x: $overflow;
+        }
+      }
+    }
+  }
+
+  // flex
+  &-flex {
+    display: flex !important;
+
+    &-row {
+      flex-flow: row !important;
+
+      &-reverse {
+        flex-flow: row-reverse !important;
+      }
+
+      &-wrap {
+        flex-flow: row wrap;
+      }
+
+      &-no-wrap {
+        flex-flow: row nowrap;
+      }
+    }
+
+    &-column {
+      flex-flow: column !important;
+
+      &-reverse {
+        flex-flow: column-reverse !important;
+      }
+    }
+
+    &-justify {
+      &-center {
+        justify-content: center !important;
+      }
+
+      &-end {
+        justify-content: flex-end !important;
+      }
+
+      &-start {
+        justify-content: flex-start !important;
+      }
+
+      &-between {
+        justify-content: space-between !important;
+      }
+
+      &-evenly {
+        justify-content: space-evenly !important;
+      }
+
+      &-around {
+        justify-content: space-around !important;
+      }
+    }
+
+    &-align {
+      &-center {
+        align-items: center !important;
+      }
+
+      &-end {
+        align-items: flex-end !important;
+      }
+
+      &-start {
+        align-items: flex-start !important;
+      }
+
+      &-stretch {
+        align-items: stretch !important;
+      }
+
+      &-self {
+        &-center {
+          align-self: center !important;
+        }
+
+        &-end {
+          align-self: flex-end !important;
+        }
+
+        &-start {
+          align-self: flex-start !important;
+        }
+      }
+    }
+
+    &-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &-inline-center {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    // spacer
+    &-spacer {
+      flex-grow: 1;
+    }
+
+    @each $flex-wrap in $wdis-flex-wraps {
+      &-wrap-#{$flex-wrap} {
+        flex-wrap: $flex-wrap !important;
+      }
+    }
+
+    // sizes
+    @each $size in $wdis-flex-sizes {
+      &-#{$size} {
+        flex: $size;
+      }
+    }
+  }
+
+  // vertical align
+  &-v-middle {
+    vertical-align: middle;
+  }
+
+  // Positioning
+  &-pos {
+    &-relative {
+      position: relative;
+    }
+
+    &-absolute {
+      position: absolute;
+    }
+
+    &-fixed {
+      position: fixed;
+    }
+  }
+
+  @each $key, $dimension in $wdis-dimensions {
+    // Width
+    &-w-#{$key} {
+      width: $dimension;
+    }
+
+    &-min-w-#{$key} {
+      min-width: $dimension;
+    }
+
+    &-max-w-#{$key} {
+      max-width: $dimension;
+    }
+
+    // Height
+    &-h-#{$key} {
+      height: $dimension;
+    }
+
+    &-min-h-#{$key} {
+      min-height: $dimension;
+    }
+
+    &-max-h-#{$key} {
+      max-height: $dimension;
+    }
+  }
+
+  // aspect-ratio
+  &-aspect {
+    @each $key, $ratio in $wdis-aspect-ratios {
+      &-#{$key} {
+        aspect-ratio: $ratio;
+      }
+    }
+  }
+
+  &-z {
+    @each $index in $wdis-z-indexes {
+      &-#{$index} {
+        z-index: $index;
+      }
+    }
+  }
+
+  // Cursor
+  &-cursor {
+    &-pointer {
+      cursor: pointer;
+    }
+
+    &-default {
+      cursor: default;
+    }
+
+    &-wait {
+      cursor: wait;
+    }
+
+    &-not-allowed {
+      // should override any other cursor styling
+      cursor: not-allowed !important;
+    }
+
+    &-text {
+      cursor: text;
+    }
+  }
+
+  &-pointer {
+    &-none {
+      pointer-events: none;
+    }
+  }
+
+  &-user {
+    &-none {
+      user-select: none;
+    }
+  }
+
+  // List styles
+  &-unstyled-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  // ellipsis
+  &-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &-wb {
+    @each $word-break in $wdis-word-breaks {
+      &-#{$word-break} {
+        word-break: #{$word-break};
+      }
+    }
+  }
+
+  &-ow {
+    @each $overflow-wrap in $wdis-overflow-wraps {
+      &-#{$overflow-wrap} {
+        overflow-wrap: #{$overflow-wrap};
+      }
+    }
+  }
+
+  &-ws {
+    @each $white-space in $wdis-white-spaces {
+      &-#{$white-space} {
+        white-space: #{$white-space};
+      }
+    }
+  }
+
+  // Box shadow
+  &-box-shadow {
+    &-12 {
+      box-shadow: $wdis-box-shadow-12;
+    }
+
+    &-22 {
+      box-shadow: $wdis-box-shadow-22;
+    }
+
+    &-dropdown {
+      box-shadow: 0 1px 5px #0003, 0 2px 2px #00000024, 0 3px 1px -2px #0000001f;
+    }
+
+    &-tab-nav {
+      box-shadow: 0 6px 12px rgba(36, 67, 83, 0.22);
+    }
+  }
+
+  // Hr
+  &-hr {
+    border-bottom: 1px solid map-get($map: $wdis-colours, $key: 'system-grey-3');
+    display: block;
+    height: 1px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+
+  // Border Radius
+  &-br {
+    @each $key, $radius in $wdis-border-radius {
+      &-#{$key} {
+        border-radius: #{$radius} !important;
+      }
+
+      @each $y, $vertical in $wdis-y-directions {
+        @each $x, $horizontal in $wdis-x-directions {
+          &-#{$y}#{$x}-#{$key} {
+            border-#{$vertical}-#{$horizontal}-radius: #{$radius} !important;
+          }
+        }
+
+        // example wdis-br-tx-5 to apply 5px radius to top-left && top-right as the same time
+        &-#{$y}x-#{$key} {
+          @each $x, $horizontal in $wdis-x-directions {
+            border-#{$vertical}-#{$horizontal}-radius: #{$radius} !important;
+          }
+        }
+      }
+
+      // example wdis-br-yr-5 to apply 5px radius to top-right && bottom-right as the same time
+      @each $x, $horizontal in $wdis-x-directions {
+        &-y#{$x}-#{$key} {
+          @each $y, $vertical in $wdis-y-directions {
+            border-#{$vertical}-#{$horizontal}-radius: #{$radius} !important;
+          }
+        }
+      }
+    }
+  }
+
+  &-button {
+    @include button-style();
+  }
+
+  &-border {
+    @each $size in (1, 2, 3, 4, 5) {
+      &-#{$size} {
+        border: solid #{$size}px;
+      }
+    }
+  }
+
+  //borderless
+  &-borderless {
+    border: 0;
+  }
+
+  @each $collapse in $wdis-border-collapses {
+    &-bc-#{$collapse} {
+      border-collapse: #{$collapse};
+    }
+  }
+
+  // Animations
+  &-animation {
+    &-rotate {
+      &-up {
+        animation: rotateUp 0.25s ease-in forwards;
+      }
+
+      &-down {
+        animation: rotateDown 0.25s ease-in forwards;
+      }
+    }
+
+    // Specified last to allow it to override the above animation-durations
+    &-duration {
+      &-0 {
+        animation-duration: 0s;
+      }
+    }
+  }
+
+  &-transition {
+    &-all {
+      transition: all 0.4s ease;
+    }
+
+    &-drag {
+      transition: all 0.1s ease-out;
+    }
+
+    &-colours {
+      transition: color 0.4s ease, background-color 0.4s ease, border-color 0.4s ease;
+    }
+
+    &-text-colour {
+      transition: color 0.4s ease;
+    }
+
+    &-background {
+      transition: background-color 0.4s ease;
+    }
+
+    &-border {
+      transition: border-color 0.4s ease;
+    }
+  }
+
+  // standard glow effect (system-grey-2)
+  &-glow {
+    position: absolute;
+    border-radius: 50%;
+    width: 1.75em;
+    height: 1.75em;
+    opacity: 0.35;
+    pointer-events: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background-color: map-get($map: $wdis-colours, $key: 'system-grey-2');
+    transition: all 0.25s ease-in-out;
+  }
+
+  // list styles
+  &-list {
+    &-none {
+      list-style: none;
+    }
+  }
+
+  &-separator {
+    border-bottom: solid 1px;
+  }
+
+  // directions
+  // e.g. wdis-left-1
+  @each $key, $pos in $wdis-positions {
+    @each $dir in $wdis-directions {
+      &-#{$dir}-#{$key} {
+        #{$dir}: #{$pos};
+      }
+
+      &-#{$dir}-minus-#{$key} {
+        #{$dir}: -#{$pos};
+      }
+    }
+  }
+
+  // transition height
+  @each $duration in $wdis-durations {
+    &-transition-height-#{$duration} {
+      transition: height #{$duration}ms ease-in-out;
+    }
+  }
+}
+
+// Scroll Bar
+/* dimensions */
+::-webkit-scrollbar {
+  height: 7px;
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: map-get($map: $wdis-colours, $key: 'white');
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: map-get($map: $wdis-colours, $key: 'blue-brand-5');
+  opacity: 0.6;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: map-get($map: $wdis-colours, $key: 'blue-brand-6');
+}
+
+// keyframes
+@keyframes rotateUp {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes rotateDown {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@each $name, $colour in $wdis-colours {
+  .wdis-bg-light-#{$name} {
+    background-color: scale-color($colour, $lightness: 80%) !important;
+  }
+
+  .wdis-border-light-#{$name} {
+    border-color: scale-color($colour, $lightness: 80%) !important;
+  }
+
+  .wdis-bg-disabled-#{$name} {
+    background-color: scale-color($colour, $lightness: 40%) !important;
+  }
+
+  .wdis-border-disabled-#{$name} {
+    border-color: scale-color($colour, $lightness: 40%) !important;
+  }
+
+  .wdis-button-bg-#{$name} {
+    background-color: $colour;
+    transition: all 0.4s ease-in-out;
+    @include hoverable {
+      &:hover {
+        background-color: scale-color($colour, $lightness: 20%) !important;
+      }
+    }
+    &-active {
+      background-color: scale-color($colour, $lightness: 20%) !important;
+    }
+  }
+
+  .wdis-bg-hover-#{$name} {
+    background-color: scale-color($colour, $lightness: 20%) !important;
+  }
+
+  .wdis-border-hover-#{$name} {
+    border-color: scale-color($colour, $lightness: 20%) !important;
+  }
+
+  @each $opacity in $wdis-opacities {
+    .wdis-bg-#{$name}-o-#{$opacity} {
+      background-color: rgba($colour, calc($opacity / 100));
+    }
+
+    .wdis-bg-w-#{$name}-o-#{$opacity} {
+      background-color: rgba($colour, calc($opacity / 100));
+      box-shadow: 3px 5px 10px 0 scale-color($colour, $lightness: -40%);
+    }
+
+    .wdis-border-full-#{$name}-o-#{$opacity} {
+      border: 2px solid rgba($colour, calc($opacity / 100)) !important;
+    }
+
+    .wdis-border-full-thick-#{$name}-o-#{$opacity} {
+      border: 4px solid rgba($colour, calc($opacity / 100)) !important;
+    }
+
+    @include hoverable {
+      .wdis-bg-hover-#{$name}-o-#{$opacity}:hover {
+        background-color: rgba($colour, calc($opacity / 100)) !important;
+      }
+    }
+  }
+
+  .wdis-border-full-#{$name} {
+    border: 2px solid $colour !important;
+  }
+
+  .wdis-border-1-full-#{$name} {
+    border: 1px solid $colour !important;
+  }
+
+  @each $dir in $wdis-directions {
+    .wdis-border-#{$dir}-#{$name} {
+      border-#{$dir}: 2px solid $colour !important;
+    }
+
+    .wdis-border-#{$dir}-colour-#{$name} {
+      border-#{$dir}-color: $colour !important;
+    }
+
+    .wdis-border-#{$dir}-1-#{$name} {
+      border-#{$dir}: 1px solid $colour !important;
+    }
+  }
+}

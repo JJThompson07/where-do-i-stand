@@ -1,0 +1,85 @@
+@mixin xs {
+  @media only screen and (max-width: (map-get($wdis-breakpoints, 'sm') - 1px)) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media screen and (min-width: map-get($wdis-breakpoints, 'sm')) and (max-width: (map-get($wdis-breakpoints, 'md') - 1px)) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media screen and (min-width: map-get($wdis-breakpoints, 'md')) and (max-width: (map-get($wdis-breakpoints, 'lg') - 1px)) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media screen and (min-width: map-get($wdis-breakpoints, 'lg')) and (max-width: (map-get($wdis-breakpoints, 'xl') - 1px)) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media screen and (min-width: map-get($wdis-breakpoints, 'xl')) {
+    @content;
+  }
+}
+
+// *-up()s are exclusive - e.g. md-up() doesn't activate on md.
+@mixin xs-up {
+  @media only screen and (min-width: map-get($wdis-breakpoints, 'sm')) {
+    @content;
+  }
+}
+
+@mixin sm-up {
+  @media only screen and (min-width: map-get($wdis-breakpoints, 'md')) {
+    @content;
+  }
+}
+
+@mixin md-up {
+  @media only screen and (min-width: map-get($wdis-breakpoints, 'lg')) {
+    @content;
+  }
+}
+
+@mixin lg-up {
+  @media only screen and (min-width: map-get($wdis-breakpoints, 'xl')) {
+    @content;
+  }
+}
+
+// *-down()s are exclusive - e.g. md-down() activates on md.
+@mixin xs-down {
+  @media only screen and (max-width: (map-get($wdis-breakpoints, 'sm') - 1px)) {
+    @content;
+  }
+}
+
+@mixin sm-down {
+  @media only screen and (max-width: (map-get($wdis-breakpoints, 'md') - 1px)) {
+    @content;
+  }
+}
+
+@mixin md-down {
+  @media only screen and (max-width: (map-get($wdis-breakpoints, 'lg') - 1px)) {
+    @content;
+  }
+}
+
+@mixin lg-down {
+  @media only screen and (max-width: (map-get($wdis-breakpoints, 'xl') - 1px)) {
+    @content;
+  }
+}
+
+@mixin hoverable {
+  @media (hover: hover) and (pointer: fine) {
+    @content;
+  }
+}

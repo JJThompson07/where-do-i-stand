@@ -1,0 +1,245 @@
+// Spacing
+$wdis-spacers: (
+  0: 0px,
+  1: 5px,
+  2: 10px,
+  3: 15px,
+  4: 20px,
+  5: 25px,
+  6: 30px,
+  7: 35px,
+  8: 40px,
+  9: 45px,
+  10: 50px,
+  11: 55px,
+  12: 60px,
+  13: 65px,
+  14: 70px,
+  15: 75px,
+  16: 80px
+);
+
+//** Colours
+$wdis-colours: (
+  'yellow-50': #fdffe7,
+  'yellow-100': #f8ffc1,
+  'yellow-200': #f5ff86,
+  'yellow-300': #f8ff41,
+  'yellow-400': #fffc0d,
+  'yellow-500': #f9e900,
+  'yellow-600': #d1b100,
+  'yellow-700': #a68002,
+  'yellow-800': #89640a,
+  'yellow-900': #74510f,
+  'yellow-950': #442b04,
+  'amber-50': #fef8ee,
+  'amber-100': #fdeed7,
+  'amber-200': #fbdaad,
+  'amber-300': #f8be79,
+  'amber-400': #f39237,
+  'amber-500': #f07c1f,
+  'amber-600': #e26214,
+  'amber-700': #bb4a13,
+  'amber-800': #953b17,
+  'amber-900': #783216,
+  'amber-950': #411709,
+  'red-50': #fef2f3,
+  'red-100': #fde6e9,
+  'red-200': #f9d2d7,
+  'red-300': #f5acb7,
+  'red-400': #ee7e91,
+  'red-500': #e3506d,
+  'red-600': #ca2e55,
+  'red-700': #ae2248,
+  'red-800': #921f43,
+  'red-900': #7d1e3e,
+  'red-950': #450c1e,
+  'blue-50': #f3f7fc,
+  'blue-100': #e6eff8,
+  'blue-200': #c7dcf0,
+  'blue-300': #95bfe4,
+  'blue-400': #5d9fd3,
+  'blue-500': #3883bf,
+  'blue-600': #2868a1,
+  'blue-700': #235789,
+  'blue-800': #1f476d,
+  'blue-900': #1f3d5b,
+  'blue-950': #14273d,
+  'green-50': #f5faf3,
+  'green-100': #e8f5e3,
+  'green-200': #d0ebc7,
+  'green-300': #acd99c,
+  'green-400': #78bc61,
+  'green-500': #5ca344,
+  'green-600': #478633,
+  'green-700': #3a6a2b,
+  'green-800': #315526,
+  'green-900': #294621,
+  'green-950': #13250e,
+  'grey-50': #f4f6f7,
+  'grey-100': #e3e6ea,
+  'grey-200': #cad1d7,
+  'grey-300': #a5b0bb,
+  'grey-400': #708090,
+  'grey-500': #5e6d7c,
+  'grey-600': #515c69,
+  'grey-700': #454d59,
+  'grey-800': #3e444c,
+  'grey-900': #373b42,
+  'grey-950': #22252a
+);
+
+// Breakpoints - must be listed in ascending order with their min-widths.
+$wdis-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1904px
+);
+
+$wdis-directions: ('left', 'bottom', 'right', 'top');
+
+$wdis-positions: (
+  0: 0px,
+  1: 5px,
+  2: 10px,
+  3: 15px,
+  4: 20px,
+  5: 25px,
+  6: 30px,
+  7: 35px,
+  8: 40px,
+  9: 45px,
+  10: 50px,
+  25: 25%,
+  50: 50%,
+  75: 75%,
+  100: 100%
+);
+
+$wdis-font-weights: (300, 400, 500, 600, 700);
+
+$wdis-durations: (300, 400, 500, 600, 700, 800, 900, 1000);
+
+$wdis-text-sizes: (12, 13, 14, 18, 24, 32, 36);
+
+$wdis-border-radius: (
+  0: 0,
+  2: 2px,
+  3: 3px,
+  4: 4px,
+  5: 5px,
+  6: 6px,
+  10: 10px,
+  12: 12px,
+  15: 15px,
+  16: 16px,
+  20: 20px,
+  22: 22px,
+  24: 24px,
+  25: 25px,
+  30: 30px,
+  'modal': 0.3rem,
+  'circular': 50%
+);
+
+$wdis-border-collapses: (collapse, separate);
+
+$wdis-y-directions: (
+  't': 'top',
+  'b': 'bottom'
+);
+
+$wdis-x-directions: (
+  'r': 'right',
+  'l': 'left'
+);
+
+$wdis-z-indexes: (0, 1, 2, 5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110);
+
+$wdis-line-heights: (
+  'normal': normal,
+  '0': 0,
+  '0-5': 0.5,
+  '1': 1,
+  '1-5': 1.5
+);
+
+$wdis-flex-wraps: (nowrap, wrap, wrap-reverse);
+$wdis-flex-sizes: (0, 1, 2, 3, 4, 5, 6);
+
+$wdis-box-shadow-12: 0px 6px 15px rgba(36, 67, 83, 0.12);
+$wdis-box-shadow-22: 0px 6px 12px rgba(36, 67, 83, 0.22);
+
+$wdis-overflows: (hidden, scroll, auto, visible);
+
+$wdis-word-breaks: (normal, break-all, keep-all);
+
+$wdis-overflow-wraps: (normal, break-word, anywhere);
+
+$wdis-white-spaces: (normal, break-space, nowrap);
+
+$wdis-dimensions: (
+  0: 0,
+  25: 25%,
+  50: 50%,
+  75: 75%,
+  100: 100%,
+  calc-100: calc(100%),
+  'min-content': min-content,
+  'max-content': max-content,
+  'auto': auto,
+  'vh': 100vh,
+  'vw': 100vw,
+  'dvh': 100dvh,
+  'dvw': 100dvw
+);
+
+$wdis-reactions: (
+  0: 'likes',
+  1: 'love',
+  2: 'care',
+  3: 'haha',
+  4: 'wow',
+  5: 'sad',
+  6: 'angry'
+);
+
+$wdis-opacities: (
+  0,
+  5,
+  10,
+  15,
+  20,
+  25,
+  30,
+  35,
+  40,
+  45,
+  50,
+  55,
+  60,
+  65,
+  70,
+  75,
+  80,
+  85,
+  90,
+  95,
+  100
+);
+
+$wdis-aspect-ratios: (
+  auto: auto,
+  video: calc(16 / 9),
+  inherit: inherit,
+  initial: initial,
+  unset: unset,
+  square: calc(1 / 1)
+);
+
+// Mixins
+@import './mixins/animations.scss';
+@import './mixins/utility.scss';
+@import './mixins/media-queries.scss';

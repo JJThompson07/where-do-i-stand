@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  font-family: 'Figtree', sans-serif;
+}
+
+@each $prop, $abbrev in (font-weight: wdis-fw-) {
+  @each $size in $wdis-font-weights {
+    .#{$abbrev}#{$size} {
+      #{$prop}: $size !important;
+    }
+  }
+}
+
+@each $prop, $abbrev in (font-size: wdis-text-) {
+  @each $size in $wdis-text-sizes {
+    .#{$abbrev}#{$size} {
+      #{$prop}: #{$size}px !important;
+    }
+  }
+}
+
+@each $prop,
+  $abbrev in (color: wdis-text-colour-, background-color: wdis-bg-, border-color: wdis-border-)
+{
+  @each $name, $colour in $wdis-colours {
+    .#{$abbrev}#{$name} {
+      #{$prop}: #{$colour} !important;
+    }
+  }
+}
+
+@each $name, $height in $wdis-line-heights {
+  .wdis-line-height-#{$name} {
+    line-height: $height !important;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.5;
+}
+
+// Text styles
+.wdis-text-small-body-reg {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.wdis-text-small-body-med {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.wdis-text-small-body-bold {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.wdis-text-sub-body-light {
+  font-size: 13px;
+  font-weight: 300;
+}
+
+.wdis-text-sub-body-reg {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.wdis-text-sub-body-med {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.wdis-text-sub-body-bold {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.wdis-text-body-light {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.wdis-text-body-reg {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.wdis-text-body-med {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.wdis-text-body-bold {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.wdis-text-sub-h23 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.wdis-text-sub-h2 {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.wdis-text-sub-h1 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.wdis-text-h3 {
+  font-size: 36px;
+  font-weight: 500;
+}
+
+.wdis-text-h2 {
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.wdis-text-h1 {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.wdis-text {
+  &-center {
+    text-align: center !important;
+  }
+
+  &-left {
+    text-align: left !important;
+  }
+
+  &-right {
+    text-align: right !important;
+  }
+
+  &-capitalize {
+    text-transform: capitalize !important;
+  }
+
+  &-transform-none {
+    text-transform: none !important;
+  }
+
+  &-uppercase {
+    text-transform: uppercase !important;
+  }
+
+  &-lowercase {
+    text-transform: lowercase !important;
+  }
+}
